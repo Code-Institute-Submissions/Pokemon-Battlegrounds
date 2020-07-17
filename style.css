@@ -11,6 +11,7 @@ body{
     margin:0;
 }
 
+/* Overall Main Page */
 #game-title-page{
     background-image: url(./images/title-screen/splash-background.png);
     background-position: center;
@@ -24,6 +25,7 @@ body{
     background-color: transparent;
 }
 
+/* Game Title Management */
 #game-title-area{
     display: flex;
     justify-content: center;
@@ -35,6 +37,7 @@ body{
     height:auto !important;
 }
 
+/* Game Title Subtext Management */
 .title-instruction{
     display: flex;
     justify-content: center;
@@ -62,7 +65,7 @@ body{
 }
 
 
-
+/* Pokeball Button  */
 #pokeball-start{
     margin-top: 20px;
     display: flex;
@@ -125,6 +128,7 @@ button:focus{
   border-top:6px solid #000000;
 }
 
+/* Copyright Label */
 .copyright-text{
     display: flex;
     justify-content: center;
