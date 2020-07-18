@@ -6,7 +6,7 @@
      url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.ttf") format("truetype"), 
      url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.svg#Pokemon GB") format("svg"); }
  body{
-     padding:0;
+    padding:0;
     margin:0;
 }
 
@@ -71,14 +71,13 @@
 }
 
 .dialogue-box{
-    /* font-size: 8px;
-    font-family: "Pokemon GB", Arial, sans-serif; */
+    position: relative;
     border-radius: 2px;
     padding: 8px;
     max-width: 100% !important;
     max-height:40% !important;
-    text-align: center;
-    width: 800px;
+    text-align: left;
+    width: 820px;
     height:30%;
     line-height: 16px;
     margin: auto;
@@ -89,4 +88,20 @@
                 0 0 0 1px black,
                 inset 0 0 0 1px black;
 }
+
+.text-dialogue{
+    padding-top:15px;
+}
+
+#initialize-game{
+    visibility:hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
 
