@@ -1,0 +1,92 @@
+@import url(//db.onlinewebfonts.com/c/831e1f4da157d96bc996f8c9f5f1e578?family=Pokemon+GB);
+@font-face {font-family: "Pokemon GB"; src: url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.eot"); 
+    src: url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.woff2") format("woff2"),
+     url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.woff") format("woff"), 
+     url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.ttf") format("truetype"), 
+     url("//db.onlinewebfonts.com/t/831e1f4da157d96bc996f8c9f5f1e578.svg#Pokemon GB") format("svg"); }
+ body{
+     padding:0;
+    margin:0;
+}
+
+ #game-instructions{
+    height:100vh;
+    background-color: rgba(0,0,0,0.7);
+    width:100%;
+}
+.jumbotron{
+    background-color: transparent;
+    padding-bottom:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    padding-top:30px !important;
+    margin-top: 0px !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    margin-bottom: 20px !important;
+}
+
+#instruction-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#instruction-title h1{
+    text-align: center;
+    font-family: Pokemon GB;
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+}
+
+.images-to-load{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.oak-image{
+    width:20%;
+    height:40%;
+    animation: fadeIn ease 7s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.starters-image{
+    width:40%;
+    height:60%;
+    animation: fadeIn ease 10s;
+}
+
+.dialogue-box{
+    /* font-size: 8px;
+    font-family: "Pokemon GB", Arial, sans-serif; */
+    border-radius: 2px;
+    padding: 8px;
+    max-width: 100% !important;
+    max-height:40% !important;
+    text-align: center;
+    width: 800px;
+    height:30%;
+    line-height: 16px;
+    margin: auto;
+    background: white;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black,
+                inset 0 1px 0 1px black,
+                0 0 0 1px black,
+                inset 0 0 0 1px black;
+}
+
