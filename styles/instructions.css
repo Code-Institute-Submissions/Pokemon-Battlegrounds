@@ -100,7 +100,7 @@
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (min-device-width:360px) and (max-device-width:376px){
+@media only screen and (min-device-width:320px) and (max-device-width:376px){
     .dialogue-box{
         height:63.3%;
     }
