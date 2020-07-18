@@ -75,11 +75,10 @@
     border-radius: 2px;
     padding: 8px;
     max-width: 100% !important;
-    max-height:40% !important;
+    max-height:100% !important;
     text-align: left;
     width: 820px;
     height:30%;
-    line-height: 16px;
     margin: auto;
     background: white;
     border: 1px solid white;
@@ -101,6 +100,11 @@
     transform: translate(-50%, -50%);
 }
 
+@media only screen and (min-width:360px) and (max-width:376px){
+    .dialogue-box{
+        height:63.3%;
+    }
+}
 
 
 
