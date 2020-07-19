@@ -66,7 +66,7 @@ $(function(){
         $('#initialize-game').click(function(){
           let start_confirmation= confirm('Are you ready to begin?');
           if (start_confirmation == true){
-              window.location.href = "index.html"
+              window.location.href = "gameApplication.html"
           }else{
               alert('Alright, I understand, please come back when you are ready!')
           }
