@@ -21,12 +21,12 @@ $(function(){
                    setView:true,
                    maxZoom: 20
                }).on("locationfound", (e) =>{
-                       if(displayMap.hasLayer(playerMarker)){
-                            playerMarker.setLatLng([e.latitude,e.longitude]).update()
-                       }else{
-                           let updateMarker = L.marker([e.latitude,e.longitude])
-                           updateMarker.addTo(displayMap)
-                       }
+                    if(!playerMarker){
+                        playerMarker = new L.marker(e.latlng)
+                        playerMarker.addTo(displayMap);
+                    }else{
+                        playerMarker.setLatLng(e.latlng).update()
+                    }
                    }
                )
             })
