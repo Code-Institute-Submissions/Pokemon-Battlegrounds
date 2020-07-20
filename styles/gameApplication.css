@@ -81,12 +81,20 @@
     transform: translateY(4px);
 }
 
-#pokemon-map{
-    width:80%;
+#game-display{
+    width: 100%;
     max-width: 100%;
-    max-height: 50vh;
-    height:50vh;
+    height: 150vh;
 }
+
+#pokemon-map{
+    width:100%;
+    max-width: 100%;
+    max-height: 80vh;
+    height:80vh;
+}
+
+
 
 
 
