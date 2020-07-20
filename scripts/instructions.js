@@ -75,6 +75,7 @@ $(function(){
     },85000)
 
     let birchAudio = new Audio('birch-bgm.mp3');
+    birchAudio.style.display= "none";
     $('body').mousemove(function(){
         birchAudio.play();
     })
