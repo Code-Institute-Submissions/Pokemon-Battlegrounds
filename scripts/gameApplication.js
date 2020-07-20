@@ -16,21 +16,18 @@ $(function(){
                let playerMarker = L.marker(user_position)
                playerMarker.addTo(displayMap);
 
-               this.displayMap.locate({
+               displayMap.locate({
                    watch: true,
                    setView:true,
                    maxZoom: 20
-               }).on("locationfound", (e) =>{
-                   if(!this.playerMarker){
-                       this.playerMarker = new L.marker(e.latlng)
-                       this.playerMarker.addTo(displayMap)
+               }).on("locationfound", function(e){
+                   if(!playerMarker){
+                       playerMarker =  L.marker(e.latlng)
+                       playerMarker.addTo(displayMap)
                    }else{
-                       this.playerMarker.setLatLng(e.latlng);
+                       playerMarker.setLatLng(e.latlng)
                    }
                })
-            
-
-
             })
         }else{
             alert('Geolocation service has failed, unable to retrieve your location')
