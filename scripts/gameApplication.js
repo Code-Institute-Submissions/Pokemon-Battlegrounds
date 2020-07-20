@@ -25,7 +25,7 @@ $(function(){
                         this.playerMarker = new L.marker([e.latitude,e.longitude])
                         this.playerMarker.addTo(displayMap);
                     }else{
-                        this.playerMarker.setLatLng([e.latitude,e.longitude]).update()
+                        this.playerMarker.setLatLng([e.latitude,e.longitude])
                     }
                    }
                )
