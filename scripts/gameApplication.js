@@ -22,10 +22,10 @@ $(function(){
                    maxZoom: 20
                }).on("locationfound", (e) =>{
                     if(!playerMarker){
-                        playerMarker = new L.marker(e.latlng)
+                        playerMarker = new L.marker([e.latitude,e.longitude])
                         playerMarker.addTo(displayMap);
                     }else{
-                        playerMarker.setLatLng(e.latlng).update()
+                        playerMarker.setLatLng([e.latitude,e.longitude]).update()
                     }
                    }
                )
