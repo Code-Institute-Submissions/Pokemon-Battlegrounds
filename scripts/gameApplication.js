@@ -20,10 +20,9 @@ $(function(){
                    watch: true,
                    setView:true,
                    maxZoom: 20
-               }).on("locationfound", function(e){
+               }).on("locationfound", (e)=>{
                    if(!playerMarker){
-                       playerMarker =  L.marker(e.latlng)
-                       playerMarker.addTo(displayMap)
+                       playerMarker = L.marker(e.latlng).addTo(displayMap)
                    }else{
                        playerMarker.setLatLng(e.latlng)
                    }
