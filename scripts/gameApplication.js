@@ -21,11 +21,11 @@ $(function(){
                    setView:true,
                    maxZoom: 20
                }).on("locationfound", (e) =>{
-                    if(!playerMarker){
-                        playerMarker = new L.marker([e.latitude,e.longitude])
-                        playerMarker.addTo(displayMap);
+                    if(!this.playerMarker){
+                        this.playerMarker = new L.marker([e.latitude,e.longitude])
+                        this.playerMarker.addTo(displayMap);
                     }else{
-                        playerMarker.setLatLng([e.latitude,e.longitude]).update()
+                        this.playerMarker.setLatLng([e.latitude,e.longitude]).update()
                     }
                    }
                )
