@@ -21,19 +21,22 @@ $(function(){
                    setView:true,
                    maxZoom: 20
                }).on("locationfound", (e) =>{
-                    if(!playerMarker){
-                        playerMarker = L.marker([e.latitude,e.longitude])
-                        playerMarker.addTo(displayMap);
-                    }else{
-                        playerMarker.setLatLng([e.latitude,e.longitude]).update()
-                    }
+                   if(!this.playerMarker){
+                       this.playerMarker = new L.marker(e.latlng)
+                       this.playerMarker.addTo(displayMap)
+                   }else{
+                       this.playerMarker.setLatLng(e.latlng);
                    }
-               )
+               })
+            
+
+
             })
         }else{
             alert('Geolocation service has failed, unable to retrieve your location')
             }
         }
+    
 
 
     initializeMapWithUserPosition()
