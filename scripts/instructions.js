@@ -79,4 +79,7 @@ $(function(){
     $('body').mousemove(function(){
         birchAudio.play();
     })
+    $('body').on('tap',function(){
+        birchAudio.play();
+    })
 })

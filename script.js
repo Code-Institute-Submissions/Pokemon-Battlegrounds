@@ -3,4 +3,7 @@ $(function(){
     $('body').mousemove(function(){
         audio.play();
     })
+    $('body').on("tap",function(){
+        audio.play();
+    })
 })
