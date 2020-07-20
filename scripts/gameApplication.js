@@ -20,23 +20,20 @@ $(function(){
                    watch: true,
                    setView:true,
                    maxZoom: 20
-               }).on("locationfound", function(e){
-                   if(!playerMarker){
-                       playerMarker = new L.marker(e.latlng)
-                       playerMarker.addTo(displayMap)
-                   }else{
-                       playerMarker.setLatLng(e.latlng);
+               }).on("locationfound", (e) =>{
+                       if(displayMap.hasLayer(playerMarker)){
+                            playerMarker.setLatLng([e.latitude,e.longitude]).update()
+                       }else{
+                           let updateMarker = L.marker([e.latitude,e.longitude])
+                           updateMarker.addTo(displayMap)
+                       }
                    }
-               })
-            
-
-
+               )
             })
         }else{
             alert('Geolocation service has failed, unable to retrieve your location')
             }
         }
-    
 
 
     initializeMapWithUserPosition()
