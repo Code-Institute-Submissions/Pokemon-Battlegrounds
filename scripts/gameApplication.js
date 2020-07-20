@@ -18,8 +18,7 @@ $(function(){
 
                displayMap.locate({
                    watch: true,
-                   setView:true,
-                   maxZoom: 20
+                   setView:true
                }).on("locationfound", (e)=>{
                    if(!playerMarker){
                        playerMarker = L.marker(e.latlng).addTo(displayMap)
