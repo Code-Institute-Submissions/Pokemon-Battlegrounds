@@ -79,21 +79,25 @@
     background-color: #ff4d2e;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
-  @media only screen and (min-device-width:320px) and (max-device-width:415px){
+#pokemon-map{
+    width:80%;
+    max-width: 100%;
+    max-height: 50vh;
+    height:50vh;
+}
+
+
+
+@media only screen and (min-device-width:320px) and (max-device-width:415px){
     #navigation-list{
-        display:flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row !important;
-        max-width: 100%;
         padding-left:3px;
     }
 
-    #map-link,
-    #myPokemon-link,
-    #statistics-link{
-     padding: 0.6em 0.6em;
+#map-link,
+#myPokemon-link,
+#statistics-link{
+    padding: 0.6em 0.6em;
     }
 }
