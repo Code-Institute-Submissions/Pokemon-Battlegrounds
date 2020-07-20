@@ -16,20 +16,19 @@ $(function(){
                let playerMarker = L.marker(user_position)
                playerMarker.addTo(displayMap);
 
-               displayMap.locate({
-                   watch:true,
-                   maxZoom:20,
-                   setView: true
-               })
-
-               function foundLocation(e){
-                   if(playerMarker){
-                       playerMarker.removeLayer(playerMarker);
+               this.displayMap.locate({
+                   watch: true,
+                   setView:true,
+                   maxZoom: 20
+               }).on("locationfound", function(e){
+                   if(!playerMarker){
+                       playerMarker = new L.marker(e.latlng)
+                       playerMarker.addTo(displayMap)
+                   }else{
+                       playerMarker.setLatLng(e.latlng);
                    }
-                   let newPlayerMarker = L.marker(e.latlng).addTo(displayMap)
-               }
-
-               displayMap.on('locationfound', foundLocation)
+               })
+            
 
 
             })
