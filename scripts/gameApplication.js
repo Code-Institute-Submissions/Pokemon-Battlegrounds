@@ -13,7 +13,11 @@ $(function () {
     }
 
     function getRandomInt(highest) {
-        return Math.floor(Math.random() * Math.floor(highest))
+        let result =Math.floor(Math.random() * Math.floor(highest))
+        if(result ===0){
+            result = 386
+        }
+        return result;
     }
 
     let PokemonNumber = 386;
