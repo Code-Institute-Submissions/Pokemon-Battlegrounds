@@ -67,7 +67,7 @@ $(function () {
                     }
                 })
 
-                async function getPokemon() {
+                async function InitializePokemon() {
                     const allPromises = []
                     for (let i of randomPokemonId) {
                         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
@@ -84,9 +84,6 @@ $(function () {
                             type: data.types.map((type) => type.type.name).join(', '),
                             abilities: data.abilities.map((ability) => ability.ability.name).join(', ')
                         }));
-                        pokemon.forEach((element,index) =>{
-                            console.log(element.name);
-                        });
                         createPokemonMarkers(pokemon)
                     });
                 };
@@ -112,7 +109,7 @@ $(function () {
                                                                             </div>`).addTo(displayMap);
                     });
                 }
-                getPokemon();
+                InitializePokemon();
             })
         } else {
             alert('Geolocation service has failed, unable to retrieve your location')
