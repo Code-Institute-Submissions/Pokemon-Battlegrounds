@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/gameApplication.css">
 </head>
 <body>
@@ -38,9 +39,31 @@
         <section id="map">
             <div class = "container-fluid" id="pokemon-map">
             </div>
-            <div class = "container-fluid" id="player-area">
-                
+            <div class = "container-fluid" id="timer-area">
+                <div class= "countdown-timer">
+                    <table class="countdown-container">
+                        <tr class= "countdown-title">
+                            <td colspan="4">Your Remaining Time</td>
+                        </tr>
+                        <tr class="time-information">
+                            <td id="time-display"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div> 
+            <div class="container-fluid" id="player-area">
+                <div class="log-box">
+                </div>
+                <button class="btn-lg btn-dark" id="catch-pokemon"><span><img id="pokeball-image" src="images/gameApplication/pokeball-image.png"></span>   CATCH</button>
             </div>
+        </section>
+
+        <section id="my-pokemon">
+
+        </section>
+
+        <section id="statistics">
+            
         </section>
     </main>
 

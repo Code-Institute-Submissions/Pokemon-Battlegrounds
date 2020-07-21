@@ -18,12 +18,26 @@ $(function () {
 
     let PokemonNumber = 386;
     let randomPokemonId = [];
-    while (randomPokemonId.length < 50) {
+    while (randomPokemonId.length < 100) {
         let number = getRandomInt(PokemonNumber);
         if (randomPokemonId.indexOf(number) === -1) {
                 randomPokemonId.push(number)
         }
      }
+     const StartingMinutes = 30;
+     let time = StartingMinutes * 60;
+    function initializeCountdownTimer(){
+        const remainingMinutes = Math.floor(time/60);
+        let remainingSeconds = time % 60;
+        if(remainingSeconds <10){
+            remainingSeconds ='0'+remainingSeconds;
+        }
+        $('#time-display').html(`${remainingMinutes} : ${remainingSeconds}`)
+        time--;
+        time = time<0 ? 0:time;
+    }
+    setInterval(initializeCountdownTimer,1000);
+
     
     function initializeMapWithUserPosition() {
         if (navigator.geolocation) {
