@@ -12,22 +12,23 @@ $(function () {
         return [getRandomLat, getRandomLng];
     }
 
-    function getRandomInt(highest) {
-        let result =Math.floor(Math.random() * Math.floor(highest))
-        if(result ===0){
-            result = 386
+    function getRandomInt(min,max,exclude) {
+        let result =Math.floor(Math.random() *(max-min) + min);
+        if( result >= exclude){
+            result++;
         }
         return result;
     }
 
-    let PokemonNumber = 386;
+
     let randomPokemonId = [];
     while (randomPokemonId.length < 100) {
-        let number = getRandomInt(PokemonNumber);
+        let number = getRandomInt(1,386,0);
         if (randomPokemonId.indexOf(number) === -1) {
-                randomPokemonId.push(number)
+            randomPokemonId.push(number)
         }
      }
+     
      const StartingMinutes = 30;
      let time = StartingMinutes * 60;
     function initializeCountdownTimer(){
