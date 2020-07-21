@@ -18,18 +18,16 @@ $(function () {
 
     let PokemonNumber = 386;
     let randomPokemonId = [];
-
     while (randomPokemonId.length < 50) {
         let number = getRandomInt(PokemonNumber);
         if (randomPokemonId.indexOf(number) === -1) {
-            randomPokemonId.push(number)
+                randomPokemonId.push(number)
         }
-    }
-
-
+     }
+    
     function initializeMapWithUserPosition() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
+            navigator.geolocation.getCurrentPosition(function(position) {
                 let user_position = [position.coords.latitude, position.coords.longitude]
                 let displayMap = L.map('pokemon-map').setView(user_position, 15);
                 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -54,24 +52,12 @@ $(function () {
                         playerMarker.setLatLng(e.latlng)
                     }
                 })
-                // async function getPokemons(){
-                //     for(let i=1; i<=PokemonNumber; i++){
-                //         const url = `https://pokeapi.co/api/v2/pokemon/${i}`
-                //         await fetch(url).then((response)=>{
-                //             return response.json();
-                //         })
-                //         .then((data)=>{
-                //             console.log(data);
 
-                //         })
-                //     }
-                // }
-            
                 async function getPokemon() {
                     const allPromises = []
-                    for (let i = 1; i <= PokemonNumber; i++) {
+                    for (let i of randomPokemonId) {
                         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-                        allPromises.push(fetch(url).then((response) => {
+                        allPromises.push(await fetch(url).then((response) => {
                             return response.json();
                         }));
                     }
@@ -84,29 +70,39 @@ $(function () {
                             type: data.types.map((type) => type.type.name).join(', '),
                             abilities: data.abilities.map((ability) => ability.ability.name).join(', ')
                         }));
-                        console.log(pokemon)
+                        pokemon.forEach((element,index) =>{
+                            console.log(element.name);
+                        });
+                        createPokemonMarkers(pokemon)
                     });
                 };
-
-                function createPokemonMarkers() {
-                    for (i = 0; i < 50; i++) {
+                function createPokemonMarkers(pokemon){
+                    pokemon.forEach((element)=>{
                         let position = generateRandomLatLng(displayMap)
                         let pokemonIcon = L.icon({
-                            iconUrl: `https://pokeres.bastionbot.org/images/pokemon/${randomPokemonId[i]}.png`,
+                            iconUrl: `https://pokeres.bastionbot.org/images/pokemon/${element.id}.png`,
                             iconSize: [40, 60],
-                            iconAnchor: [22, 94]
+                            iconAnchor: [22, 94],
+                            popupAnchor: [12,90]
                         })
-                        L.marker(position, { icon: pokemonIcon }).addTo(displayMap);
-                    }
+                        L.marker(position,{ icon: pokemonIcon }).bindPopup(`<div class="pokemon-details bg-dark" style="display:flex;flex-direction:row;" >
+                                                                                <div class="pokemon-image col-sm-6">
+                                                                                <img src='https://pokeres.bastionbot.org/images/pokemon/${element.id}.png' style="display:flex;justify-content:center;width:100%;height:80%;max-width:100%;">
+                                                                                </div>
+                                                                                <div class="text-details text-light col-sm-6" style="display:flex;flex-direction:column;">
+                                                                                    <h5>Name: ${element.name}</h5>
+                                                                                    <h5>ID: ${element.id}</h5>
+                                                                                    <h5>Type: ${element.type}</h5>
+                                                                                    <h5>Abilities: ${element.abilities}</h5>
+                                                                                </div>
+                                                                            </div>`).addTo(displayMap);
+                    });
                 }
-                createPokemonMarkers()
                 getPokemon();
             })
         } else {
             alert('Geolocation service has failed, unable to retrieve your location')
         }
     }
-
     initializeMapWithUserPosition()
-
 })
