@@ -128,7 +128,7 @@
 }
 
 #player-area{
-    max-width: 100%;
+    max-width: 50%;
     width: 100%;
     margin-top:40px;
     display: flex;
@@ -136,14 +136,12 @@
     flex-direction: column;
 }
 
-.log-box{
+#log-box{
         border-radius: 2px;
         padding: 8px;
         padding-top: 40px !important;
-        max-width: 100% !important;
-        max-height:100vh !important;
         text-align: left;
-        width: 50%;
+        width: 100%!important ;
         height:50vh;
         background: white;
         border: 1px solid white;
@@ -154,7 +152,7 @@
 }
 
 #catch-pokemon{
-    width:50%;
+    width: 100% !important;
     font-family: Pokemon GB,sans-serif;
     font-weight: bold;
 }
@@ -165,8 +163,8 @@
 }
 
 #pokeball-image{
-    height:30%;
-    width:10vh;
+    width:20px;
+    height:50px;
 }
 
 
@@ -176,14 +174,14 @@
         padding-left:3px;
     }
 
-#map-link,
-#myPokemon-link,
-#statistics-link{
-    padding: 0.6em 0.6em;
+    #map-link,
+    #myPokemon-link,
+    #statistics-link{
+        padding: 0.6em 0.6em;
+        }
+
+    #player-area{
+        max-width: 100% !important;
     }
 }
 
-.log-box,
-#catch-pokemon{
-    width: 100%;
-}
