@@ -137,12 +137,13 @@ $(function () {
                                 console.log(playerMarkerPosition.distanceTo([pokemonLat,pokemonLng]));
                                 getResults.push(element);
                                 pokemonMarkers.splice(index,1);
-                                $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">There are ${getResults.length} pokemons nearby!</h3>`)
-                                if(getResults.length==0){
-                                    $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">You are out of luck ! There are no pokemon nearby!</h3>`)
-                                }
                             }
                         })
+                        if(getResults.length===0){
+                            $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">You are out of luck ! There are no pokemon nearby!</h3>`)
+                        }else{
+                            $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">There are ${getResults.length} pokemons nearby!</h3>`)
+                        }
                     })
                 }
                         
@@ -150,7 +151,7 @@ $(function () {
                     if(Math.random() <0.5){
                         $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;flex-direction:column;">
                                             <h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${getResults[0].pokemon.name}!</h3>
-                                            <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
+                                            <div class="pokemon-image-caught" style="display:flex;justify-content:center;">
                                             <img style="width:50%;height:30vh;" src="https://pokeres.bastionbot.org/images/pokemon/${getResults[0].pokemon.id}.png">
                                             </div>
                                             </div>`);
