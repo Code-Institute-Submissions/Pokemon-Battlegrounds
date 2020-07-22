@@ -170,12 +170,15 @@ $(function () {
                     $('#catch-pokemon').click(function(){
                         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Catching in Progress......</h3>`)
                         if(getResults.length >1){
-                            pokemonMarkers = pokemonMarkers.concat(getResults.slice(1))
+                            pokemonMarkers = pokemonMarkers.concat(getResults.slice(1,getResults.length))
                             getResults.length =1;
                             setTimeout(probabilityToCatch,3000);
-                        }else{
+                            console.log(getResults);
+                        }else if(getResults.length === 1){
                             setTimeout(probabilityToCatch,3000);
                             console.log(getResults);
+                        }else{
+                            $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">ERROR: No Pokemon To Catch!</h3>`)
                         }
                     })
                 }
