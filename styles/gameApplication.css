@@ -151,18 +151,31 @@
                     inset 0 0 0 1px black;
 }
 
-#catch-pokemon{
+
+.button-area{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+#catch-pokemon,
+#detect-pokemon{
     width: 100% !important;
     font-family: Pokemon GB,sans-serif;
     font-weight: bold;
 }
 
-#catch-pokemon:active{
+#catch-pokemon:active,
+#detect-pokemon:active{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 #pokeball-image{
+    width:20px;
+    height:50px;
+}
+
+#magnify-glass{
     width:20px;
     height:50px;
 }

@@ -63,7 +63,8 @@ $(function () {
 
                 displayMap.locate({
                     watch: true,
-                    setView: true
+                    setView: true,
+                    minZoom:13
                 }).on("locationfound", (e) => {
                     if (!playerMarker) {
                         playerMarker = L.marker(e.latlng).addTo(displayMap)
@@ -90,10 +91,9 @@ $(function () {
                             abilities: data.abilities.map((ability) => ability.ability.name).join(', ')
                         }));
                         createPokemonMarkers(pokemon)
-                        catchPokemon(pokemon)
                     });
                 };
-                pokemonMarkers=[];
+                let pokemonMarkers=[];
                 function createPokemonMarkers(pokemon){
                     pokemon.forEach((element)=>{
                         let position = generateRandomLatLng(displayMap)
@@ -102,53 +102,84 @@ $(function () {
                             iconSize: [40, 60],
                             iconAnchor: [22, 94],
                             popupAnchor: [12,90]
-                        })
-                        pokemonMarkers.push(L.marker(position,{ icon: pokemonIcon }).bindPopup(`<div class="pokemon-details bg-dark" style="display:flex;flex-direction:row;" >
-                                                                                <div class="pokemon-image col-sm-6">
-                                                                                <img src='https://pokeres.bastionbot.org/images/pokemon/${element.id}.png' style="display:flex;justify-content:center;width:100%;height:80%;max-width:100%;">
-                                                                                </div>
-                                                                                <div class="text-details text-light col-sm-6" style="display:flex;flex-direction:column;">
-                                                                                    <h5>Name: ${element.name}</h5>
-                                                                                    <h5>ID: ${element.id}</h5>
-                                                                                    <h5>Type: ${element.type}</h5>
-                                                                                    <h5>Abilities: ${element.abilities}</h5>
-                                                                                </div>
-                                                                            </div>`).addTo(displayMap));
+                        }) 
+                        let m = L.marker(position,{ icon: pokemonIcon }).bindPopup(`<div class="pokemon-details bg-dark" style="display:flex;flex-direction:row;" >
+                        <div class="pokemon-image col-sm-6">
+                        <img src='https://pokeres.bastionbot.org/images/pokemon/${element.id}.png' style="display:flex;justify-content:center;width:100%;height:80%;max-width:100%;">
+                        </div>
+                        <div class="text-details text-light col-sm-6" style="display:flex;flex-direction:column;">
+                            <h5>Name: ${element.name}</h5>
+                            <h5>ID: ${element.id}</h5>
+                            <h5>Type: ${element.type}</h5>
+                            <h5>Abilities: ${element.abilities}</h5>
+                        </div>
+                    </div>`);
+                    m.pokemon = element;
+                    m.addTo(displayMap);
+                    pokemonMarkers.push(m);
+                    // pokemonMarkers.forEach((element)=>{
+                    //     console.log(element._latlng.lat)
+                    // })
                     });
                 }
-                function catchPokemon(pokemon){
-                    let playerPos = playerMarker.getLatLng();
-                    pokemon.forEach((element)=>{
-                       $('#catch-pokemon').click(function(){
-                           for(let i of pokemonMarkers){
-                               let pokemonMarker = i.getLatLng();
-                               if(playerPos.distanceTo(pokemonMarker)<=30){
-                                   $('#log-box').html(`You have tossed a pokeball to ${element.name}`)
-                                   setTimeout(function(){
-                                       if(Math.random() <0.5){
-                                            $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;">
-                                                                <h1 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${element.name}!</h1>
-                                                                <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
-                                                                <img style="width:50%;height:10vh;" src="https://pokeres.bastionbot.org/images/pokemon/${element.id}.png">
-                                                                </div>
-                                                               </div>`)
-                                            i.remove();
-                                            console.log(i);
-                                       }
-                                       else{
-                                           $(`#log-box').html('<h1 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${element.name} has escaped! It is now gone forever! </h1>`)
-                                       }
-                                   },6000)
 
-                               }else{
-                                   $('#log-box').html('<h1>There are no pokemon at your location!</h1>')
-                               }
-
-                           }
-                       })
+                // Add a detecting button to detect the surrounding pokemon and then print message inside dialog box and then clear after 3s
+                // use the catchPokemon function to detect based on the detected pokemon if more than 1 then clear all and then check if there are anh
+                console.log(pokemonMarkers)
+                let getResults=[];
+                function getValidPokemon(){
+                    let playerMarkerPosition = playerMarker.getLatLng();
+                    $("#detect-pokemon").click(function(){
+                        pokemonMarkers.forEach((element,index)=>{
+                            let pokemonLat = element._latlng.lat
+                            let pokemonLng = element._latlng.lng
+                            if(playerMarkerPosition.distanceTo([pokemonLat,pokemonLng])<=200){
+                                console.log(playerMarkerPosition.distanceTo([pokemonLat,pokemonLng]));
+                                getResults.push(element);
+                                pokemonMarkers.splice(index,1);
+                                $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">There are ${getResults.length} pokemons nearby!</h3>`)
+                                if(getResults.length==0){
+                                    $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">You are out of luck ! There are no pokemon nearby!</h3>`)
+                                }
+                            }
+                        })
                     })
                 }
+                        
+                function probabilityToCatch(){
+                    if(Math.random() <0.5){
+                        $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;flex-direction:column;">
+                                            <h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${getResults[0].pokemon.name}!</h3>
+                                            <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
+                                            <img style="width:50%;height:30vh;" src="https://pokeres.bastionbot.org/images/pokemon/${getResults[0].pokemon.id}.png">
+                                            </div>
+                                            </div>`);
+                        
+                        getResults[0].remove();
+                    }
+                    else{
+                        $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${getResults[0].pokemon.name} has escaped! It is now gone forever!</h3>`)
+                        getResults[0].remove();
+                    }
+                }
+
+                function catchPokemon(){
+                    $('#catch-pokemon').click(function(){
+                        $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Catching in Progress......</h3>`)
+                        if(getResults.length >1){
+                            getResults.length =1;
+                            setTimeout(probabilityToCatch,3000);
+                        }else{
+                            setTimeout(probabilityToCatch,3000);
+                        }
+                    })
+                }
+
                 InitializePokemon();
+                getValidPokemon();
+                catchPokemon();
+                console.log(getResults);
+                console.log(pokemonMarkers);
             })
         } else {
             alert('Geolocation service has failed, unable to retrieve your location')
@@ -156,3 +187,24 @@ $(function () {
     }
     initializeMapWithUserPosition()
 })
+
+
+// setTimeout(function(){
+//     if(Math.random() <0.5){
+//         $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;flex-direction:column;">
+//                             <h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${getResults[0].pokemon.name}!</h3>
+//                             <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
+//                             <img style="width:50%;height:30vh;" src="https://pokeres.bastionbot.org/images/pokemon/${getResults[0].pokemon.id}.png">
+//                             </div>
+//                             </div>`);
+//         getResults.length = 0;
+//         element.remove();
+//         pokemonMarkers.splice(element,1);
+//     }
+//     else{
+//         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${getResults[0].pokemon.name} has escaped! It is now gone forever!</h3>`)
+//         getResults.length = 0;
+//         element.remove();
+//         pokemonMarkers.splice(element,1);
+//     }
+// },4000)                         
