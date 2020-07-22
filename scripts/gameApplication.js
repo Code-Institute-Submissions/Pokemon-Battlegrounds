@@ -157,10 +157,12 @@ $(function () {
                                             </div>`);
                         
                         getResults[0].remove();
+                        getResults.shift();
                     }
                     else{
                         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${getResults[0].pokemon.name} has escaped! It is now gone forever!</h3>`)
                         getResults[0].remove();
+                        getResults.shift();
                     }
                 }
 
@@ -168,10 +170,12 @@ $(function () {
                     $('#catch-pokemon').click(function(){
                         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Catching in Progress......</h3>`)
                         if(getResults.length >1){
+                            pokemonMarkers = pokemonMarkers.concat(getResults.slice(1))
                             getResults.length =1;
                             setTimeout(probabilityToCatch,3000);
                         }else{
                             setTimeout(probabilityToCatch,3000);
+                            console.log(getResults);
                         }
                     })
                 }
