@@ -90,8 +90,10 @@ $(function () {
                             abilities: data.abilities.map((ability) => ability.ability.name).join(', ')
                         }));
                         createPokemonMarkers(pokemon)
+                        catchPokemon(pokemon)
                     });
                 };
+                pokemonMarkers=[];
                 function createPokemonMarkers(pokemon){
                     pokemon.forEach((element)=>{
                         let position = generateRandomLatLng(displayMap)
@@ -101,7 +103,7 @@ $(function () {
                             iconAnchor: [22, 94],
                             popupAnchor: [12,90]
                         })
-                        L.marker(position,{ icon: pokemonIcon }).bindPopup(`<div class="pokemon-details bg-dark" style="display:flex;flex-direction:row;" >
+                        pokemonMarkers.push(L.marker(position,{ icon: pokemonIcon }).bindPopup(`<div class="pokemon-details bg-dark" style="display:flex;flex-direction:row;" >
                                                                                 <div class="pokemon-image col-sm-6">
                                                                                 <img src='https://pokeres.bastionbot.org/images/pokemon/${element.id}.png' style="display:flex;justify-content:center;width:100%;height:80%;max-width:100%;">
                                                                                 </div>
@@ -111,8 +113,40 @@ $(function () {
                                                                                     <h5>Type: ${element.type}</h5>
                                                                                     <h5>Abilities: ${element.abilities}</h5>
                                                                                 </div>
-                                                                            </div>`).addTo(displayMap);
+                                                                            </div>`).addTo(displayMap));
                     });
+                }
+                function catchPokemon(pokemon){
+                    let playerPos = playerMarker.getLatLng();
+                    pokemon.forEach((element)=>{
+                       $('#catch-pokemon').click(function(){
+                           for(let i of pokemonMarkers){
+                               let pokemonMarker = i.getLatLng();
+                               if(playerPos.distanceTo(pokemonMarker)<=30){
+                                   $('#log-box').html(`You have tossed a pokeball to ${element.name}`)
+                                   setTimeout(function(){
+                                       if(Math.random() <0.5){
+                                            $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;">
+                                                                <h1 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${element.name}!</h1>
+                                                                <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
+                                                                <img style="width:50%;height:10vh;" src="https://pokeres.bastionbot.org/images/pokemon/${element.id}.png">
+                                                                </div>
+                                                               </div>`)
+                                            i.remove();
+                                            console.log(i);
+                                       }
+                                       else{
+                                           $(`#log-box').html('<h1 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${element.name} has escaped! It is now gone forever! </h1>`)
+                                       }
+                                   },6000)
+
+                               }else{
+                                   $('#log-box').html('<h1>There are no pokemon at your location!</h1>')
+                               }
+
+                           }
+                       })
+                    })
                 }
                 InitializePokemon();
             })
