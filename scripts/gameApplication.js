@@ -108,6 +108,8 @@ $(function() {
                     });
                 };
                 let pokemonMarkers=[];
+                let getResults=[];
+                let playerPokemon=[];
                 function createPokemonMarkers(pokemon){
                     pokemon.forEach((element)=>{
                         let position = generateRandomLatLng(displayMap)
@@ -131,16 +133,10 @@ $(function() {
                     m.pokemon = element;
                     m.addTo(displayMap);
                     pokemonMarkers.push(m);
-                    // pokemonMarkers.forEach((element)=>{
-                    //     console.log(element._latlng.lat)
-                    // })
                     });
                 }
 
-                // Add a detecting button to detect the surrounding pokemon and then print message inside dialog box and then clear after 3s
-                // use the catchPokemon function to detect based on the detected pokemon if more than 1 then clear all and then check if there are anh
                 console.log(pokemonMarkers)
-                let getResults=[];
                 function getValidPokemon(){
                     let playerMarkerPosition = playerMarker.getLatLng();
                     $("#detect-pokemon").click(function(){
@@ -169,7 +165,9 @@ $(function() {
                                             <img style="width:50%;height:30vh;" src="https://pokeres.bastionbot.org/images/pokemon/${getResults[0].pokemon.id}.png">
                                             </div>
                                             </div>`);
-                        
+                        playerPokemon = playerPokemon.concat(getResults);
+                        console.log(playerPokemon);
+                        displayPlayerPokemon();
                         getResults[0].remove();
                         getResults.shift();
                     }
@@ -183,9 +181,9 @@ $(function() {
                 function catchPokemon(){
                     $('#catch-pokemon').click(function(){
                         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Catching in Progress......</h3>`)
-                        if(getResults.length >1){
-                            pokemonMarkers = pokemonMarkers.concat(getResults.slice(1,getResults.length))
-                            getResults.length =1;
+                        if(getResults.length > 1){
+                            pokemonMarkers = pokemonMarkers.concat(getResults.slice(1,getResults.length));
+                            getResults.length = 1;
                             setTimeout(probabilityToCatch,3000);
                             console.log(getResults);
                         }else if(getResults.length === 1){
@@ -195,6 +193,15 @@ $(function() {
                             $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">ERROR: No Pokemon To Catch!</h3>`)
                         }
                     })
+                }
+
+                function displayPlayerPokemon(){
+                    playerPokemon.forEach((element)=>{
+                        $('.pokemon-area').append(`
+                        <img src="${element.pokemon.image}">
+                        `)
+                    })
+                    playerPokemon = [];
                 }
 
                 InitializePokemon();

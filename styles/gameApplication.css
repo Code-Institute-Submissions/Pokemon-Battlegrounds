@@ -216,7 +216,6 @@
     border-radius: 2px;
     padding: 8px;
     padding-top: 40px !important;
-    text-align: left;
     width: 40%!important ;
     height:10vh;
     border: 1px solid white;
@@ -241,7 +240,7 @@
     background-size: cover;
     border-radius: 2px;
     padding: 8px;
-    padding-top: 40px !important;
+    padding-top: 5px !important;
     text-align: left;
     width: 60%!important ;
     height:70vh;
@@ -252,6 +251,8 @@
                 0 0 0 1px black,
                 inset 0 0 0 1px black;
 }
+
+
 
 
 
