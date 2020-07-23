@@ -1,4 +1,19 @@
-$(function () {
+$(function() {
+    function hideAllPages(){
+        let pages =$('.appPage');
+        for (let p of pages){
+            $(p).removeClass('show');
+            $(p).addClass('hidden')
+        }
+    }
+
+    $(".nav-link").click(function(){
+        let pageNumber = $(this).data('section');
+        hideAllPages();
+        $(`#page-${pageNumber}`).addClass('show');
+        $(`#page-${pageNumber}`).removeClass('hidden');
+    });
+
     function generateRandomLatLng(displayMap) {
         let bounds = displayMap.getBounds();
         let southWest = bounds.getSouthWest();
@@ -19,7 +34,6 @@ $(function () {
         }
         return result;
     }
-
 
     let randomPokemonId = [];
     while (randomPokemonId.length < 100) {
@@ -195,24 +209,3 @@ $(function () {
     }
     initializeMapWithUserPosition()
 })
-
-
-// setTimeout(function(){
-//     if(Math.random() <0.5){
-//         $('#log-box').html(`<div class="pokemon-catch-success" style="display:flex;justify-content:center;flex-direction:column;">
-//                             <h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">Success! You have caught ${getResults[0].pokemon.name}!</h3>
-//                             <div class="pokemon-image-caught" style="diplay:flex;justify-content:center;">
-//                             <img style="width:50%;height:30vh;" src="https://pokeres.bastionbot.org/images/pokemon/${getResults[0].pokemon.id}.png">
-//                             </div>
-//                             </div>`);
-//         getResults.length = 0;
-//         element.remove();
-//         pokemonMarkers.splice(element,1);
-//     }
-//     else{
-//         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${getResults[0].pokemon.name} has escaped! It is now gone forever!</h3>`)
-//         getResults.length = 0;
-//         element.remove();
-//         pokemonMarkers.splice(element,1);
-//     }
-// },4000)                         
