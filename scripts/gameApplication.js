@@ -57,6 +57,14 @@ $(function() {
     }
     setInterval(initializeCountdownTimer,1000);
 
+    function gameOver(){
+        $('.overlay').hide()
+        setInterval(function(){
+            $('.overlay').show();
+            $('#pokemon-map').hide();
+        },1801000);
+    }
+    
     
     function initializeMapWithUserPosition() {
         if (navigator.geolocation) {
@@ -214,6 +222,7 @@ $(function() {
                 InitializePokemon();
                 getValidPokemon();
                 catchPokemon();
+                gameOver();
                 console.log(getResults);
                 console.log(pokemonMarkers);
             })
