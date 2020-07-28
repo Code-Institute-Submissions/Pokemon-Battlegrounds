@@ -110,6 +110,8 @@ $(function() {
                 let pokemonMarkers=[];
                 let getResults=[];
                 let playerPokemon=[];
+                let pokemonCaughtNumber = 0;
+                let pokemonLeftNumber = 100;
                 function createPokemonMarkers(pokemon){
                     pokemon.forEach((element)=>{
                         let position = generateRandomLatLng(displayMap)
@@ -170,6 +172,10 @@ $(function() {
                         displayPlayerPokemon();
                         getResults[0].remove();
                         getResults.shift();
+                        pokemonCaughtNumber+=1;
+                        pokemonLeftNumber-=1;
+                        $('.pokemon-caught').html(pokemonCaughtNumber);
+                        $('.pokemon-left').html(pokemonLeftNumber);
                     }
                     else{
                         $('#log-box').html(`<h3 style="font-family:Pokemon GB,sans-serif;font-weight:bold;">${getResults[0].pokemon.name} has escaped! It is now gone forever!</h3>`)
@@ -203,6 +209,7 @@ $(function() {
                     })
                     playerPokemon = [];
                 }
+
 
                 InitializePokemon();
                 getValidPokemon();

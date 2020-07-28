@@ -253,6 +253,40 @@
 }
 
 
+#stats-display{
+    display:flex;
+    justify-content: center;
+}
+
+.player-stats{
+    background-color: white;
+    width:80%;
+    height:50vh;
+    text-align: center;
+    border-radius:30px 25px;
+    border: 2px solid black;
+    box-shadow: 0 1px 0 1px black,
+    inset 0 1px 0 1px black,
+    0 0 0 1px black,
+    inset 0 0 0 1px black;
+    font-family: Pokemon GB,sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    max-width: 100%;
+    padding-top:20px;
+}
+
+
+.stats-details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    width: 100%;
+    height: 70%;
+}
+
+
 
 
 
@@ -260,6 +294,16 @@
 @media only screen and (min-device-width:320px) and (max-device-width:415px){
     #navigation-list{
         padding-left:3px;
+    }
+
+    .title-area{
+        width:80% !important;
+        height:20vh;
+    }
+
+    .pokemon-area{
+        width:95% !important;
+        height: 90vh !important;
     }
 
     #map-link,
@@ -270,6 +314,11 @@
 
     #player-area{
         max-width: 100% !important;
+    }
+
+    .player-stats h1,
+    .player-stats h3{
+        font-size: 25px !important;
     }
 }
 
