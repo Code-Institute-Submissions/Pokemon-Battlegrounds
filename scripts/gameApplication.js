@@ -1,4 +1,5 @@
 $(function() {
+    
     function hideAllPages(){
         let pages =$('.appPage');
         for (let p of pages){
@@ -99,8 +100,8 @@ $(function() {
                     const allPromises = []
                     for (let i of randomPokemonId) {
                         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-                        allPromises.push(await fetch(url).then((response) => {
-                            return response.json();
+                        allPromises.push(await axios.get(url).then((response) => {
+                            return response.data;
                         }));
                     }
 

@@ -13,10 +13,10 @@ $(function(){
         '<h4>But everyone calls me Professor OAK.</h4>',
         '<h4>Alright, enough chatter, let me explain the rules of the game to you.</h4>',
         '<h4>In Pokemon Battlegrounds, there will be a map displayed with your location shown as well as a timer of 30 minutes.</h4>',
-        '<h4>Within a radius of 5KM, there will be pokemon spawned at various locations and will be indicated on the map as markers.</h4>',
+        '<h4>Within your vicinity, there will be pokemon spawned at various locations and will be indicated on the map as markers.</h4>',
         '<h4>Your role is to head to those locations and try to catch the pokemon before the timer runs out.</h4>',
-        '<h4>In addition, in intervals of 5 minutes the playzone area will be decreased and in the event you are out of the playzone, you will start to take damage every second.</h4>',
-        '<h4>The game will end when your healthbar hits zero or when the time runs out.</h4>',
+        '<h4>In addition, each pokemon you catch will be displayed in the My Pokemon area and your current statistics can be found in the My Stats area.</h4>',
+        '<h4>The game will end when the time runs out and if you wish to restart an option will be given to do so.</h4>',
         '<h4>Now that you are aware of the game rules are you ready to play?</h4>'
     ]  
     
