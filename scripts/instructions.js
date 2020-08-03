@@ -1,7 +1,9 @@
 $(function(){
+    // Ensuring the use of Pokemon Font for the instructions
     let paragraph = document.querySelector('.text-dialogue');
     paragraph.style.fontFamily= 'Pokemon GB';
     
+    // Usage of the TypewriterJs to create the typewriting effect of the instructions
     const typewriter = new Typewriter('.text-dialogue', {
         autoStart: true
       });
@@ -60,7 +62,7 @@ $(function(){
     .pauseFor(2500)
     .deleteAll(15)
     .start();
-
+    // Displays the commencement of the start game once all the instructions have been displayed
     setTimeout(function(){
         $('#initialize-game').css('visibility','visible')
         $('#initialize-game').click(function(){
@@ -73,7 +75,7 @@ $(function(){
         })
     
     },85000)
-
+   //Function to allow players to skip the instructions and dive straight into the game
     $('#skip-instructions').click(function(){
         let skip_confirmation= confirm('Are you sure you wish to skip the instructions?');
         if(skip_confirmation ==true){
@@ -85,7 +87,7 @@ $(function(){
             },2000)
         }
     })
-
+    // Implementing the audio into the page
     let birchAudio = new Audio('birch-bgm.mp3');
     birchAudio.style.display= "none";
     $('body').mousemove(function(){
