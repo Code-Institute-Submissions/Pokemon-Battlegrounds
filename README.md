@@ -21,19 +21,25 @@ Pokemon Battlegrounds uses an external API to generate the various pokemons arou
 My objective for the game visual design was to follow the outlook of retro gameboy pokemon games such as Pokemon Emerald, Firered and Leafgreen that will give a nostalgic outlook for avid Pokemon fans. For new players who have just stumbled across Pokemon, I hope that the retro design will be a starting point for them in the pokemon universe just as it was for many pokemon fans. 
 
 ### Skeleton Structure:
-Overall the site will be a combination of a multi-page application as well as a single page application to bring about a more dynamic display for the gameplay.Beginning with a game title screen, players will have a choice to initialize the game by clicking on the centre of the pokeball or to prepare themselves for the physical game. Upon starting the game, players will be greeted by the famous Professor OAK and the three famous starter pokemons that will explain the rules of the game. 
+ - Game Title Page
+ - Instructions Page
+ - Single Page Application:
+    1. Map 
+    2. Player's Pokemon 
+    3. Player's Statistics
 
-After the rules of the game are explained, players will be given the option to choose whether they would like to commence the game whereby an additional confirmation dialog box will appear upon clicking the start game button to prevent accidental commencement of the game.When players have decided to commence on the game, they will be redirected to the game window which is a single page application. A single page application was used to ensure that players get a fast and responsive menu with real-time updates throughout.
+### Gameflow Design: 
 
-After a specific amount of time, an overlay will be displayed regardless of which area of the application the player is on. The overlay will then show the statistics of the player as well as an option for the player to restart the game of which the player will be redirected to the title screen.
 
 ## Technologies
 1. HTML
 2. CSS
 3. Bootstrap (4.5)
 4. Javascript
-5. Font Awesome
-6. 
+5. Typewriter JS
+6. Axios
+7. OnlineWebFonts(Pokemon GB Font)
+8. JQuery
 
 ## Features
 ### Current Features 
