@@ -67,6 +67,10 @@ body{
 
 
 /* Pokeball Button  */
+
+#pokeball-container{
+    max-height: 20vh;
+}
 #pokeball-start{
     margin-top: 20px;
     display: flex;
@@ -146,4 +150,14 @@ button:focus{
     color:white;
 }
 
+@media only screen and (min-device-width:320px) and (max-device-width:415px){
+    #game-title-page{
+        height: 120vh;
+        max-height:120vh;
+    }
 
+    .copyright-text h1{
+        margin-top: 20px;
+        bottom: auto !important;
+    }
+}
