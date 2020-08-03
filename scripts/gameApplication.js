@@ -197,6 +197,7 @@ $(function() {
                 </div>`);
                     cheatMarker.addTo(displayMap);
                     cheatPokemon.push(cheatMarker)
+                    // pokemonLeftNumber is updated to inform players of the correct count of the markers and to prevent any misleadings.
                     pokemonLeftNumber += 1;
                     $('.pokemon-left').html(pokemonLeftNumber);
                     $("#cheat-spawn").attr("disabled", true);
