@@ -74,6 +74,18 @@ $(function(){
     
     },85000)
 
+    $('#skip-instructions').click(function(){
+        let skip_confirmation= confirm('Are you sure you wish to skip the instructions?');
+        if(skip_confirmation ==true){
+            window.location.href= "gameApplication.html"
+        }else{
+            alert('I understand, it was an accident, I will now repeat the instructions for you.')
+            setInterval(function(){
+                window.location.href="instructions.html"
+            },2000)
+        }
+    })
+
     let birchAudio = new Audio('birch-bgm.mp3');
     birchAudio.style.display= "none";
     $('body').mousemove(function(){
