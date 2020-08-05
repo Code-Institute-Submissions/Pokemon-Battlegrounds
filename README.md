@@ -60,9 +60,9 @@ In the event that multiple pokemons are detected through the detector, when the 
 ### Current Features 
 <h4>Customizable Parameters Implemented:</h4>
 
-1. Type of pokemon : controls the number of different types of pokemon even including recent generation pokemon. However, this is subjected to the availability of the data of PokeAPI
-2. Number of Pokemon Spawned : controls the number of pokemon to be spawned within the vicinity of the player
-3. Countdown Timer: controls the total time allocated for the gameplay
+1. Type of pokemon : controls the number of different types of pokemon even including recent generation pokemon. However, this is subjected to the availability of the data of PokeAPI.
+2. Number of Pokemon Spawned : controls the number of pokemon to be spawned within the vicinity of the player.
+3. Countdown Timer: controls the total time allocated for the gameplay.
 4. Player to pokemon distance : controls the distance allowed for a player to initiate an action against the pokemon. 
 
 <div align="center"> 
@@ -83,9 +83,9 @@ players to be immersed in the Pokemon world.
 ![Alt text](/README-images/Instructions.jpg?raw=true "Instructions Page")
 </div>
 
-* Instructions Page have been implemented with animations to incorporate a realistic game feel despite having the game hosted on the browser page
+* Instructions Page have been implemented with animations to incorporate a realistic game feel despite having the game hosted on the browser page.
 * Players will be greeted by the well-known professor Oak and the three original starter pokemon and the instructions will be displayed in a typewriter fashion to give players a feeling of interaction with professor Oak.
-* Players are able to skip the instructions if they wish to and they are able to start the game immediately
+* Players are able to skip the instructions if they wish to and they are able to start the game immediately.
 * Start button has been animated to be displayed after all the rules have been explained to contribute to the realistic game feel and players will be able to commence the game after that.
 * Background music implemented to contribute to overall game feel that will happen upon player mouse movement or touch action.
 
