@@ -58,13 +58,13 @@ In the event that multiple pokemons are detected through the detector, when the 
 
 ## Features
 ### Current Features 
-Customizable Parameters Implemented:
+<h4>Customizable Parameters Implemented:</h4>
 1. Type of pokemon : controls the number of different types of pokemon even including recent generation pokemon. However, this is subjected to the availability of the data of PokeAPI
 2. Number of Pokemon Spawned : controls the number of pokemon to be spawned within the vicinity of the player
 3. Countdown Timer: controls the total time allocated for the gameplay
 4. Player to pokemon distance : controls the distance allowed for a player to initiate an action against the pokemon. 
 
-<h4><center>Game Title </center></h4>
+<h4 style="text-align:center;">Game Title </h4>
 
 ![Alt text](/README-images/Homepage.jpg?raw=true "Game Title Page")
 
@@ -73,7 +73,7 @@ players to be immersed in the Pokemon world.
 * Blinking animation on the press the pokeball to begin to make the title page more refined.
 * Background music implemented to contribute to overall game feel that will happen upon player mouse movement or touch action.
 
-<h4><center>Game Instructions</center></h4>
+<h4 style="text-align:center;">Game Instructions</h4>
 
 ![Alt text](/README-images/Instructions.jpg?raw=true "Instructions Page")
 * Instructions Page have been implemented with animations to incorporate a realistic game feel despite having the game hosted on the browser page
@@ -85,30 +85,30 @@ players to be immersed in the Pokemon world.
 #### Gameplay Application
 * Usage of a single page application for the  gameplay to allow users to have the ability to interact with a working navigation menu as they play the game.
 
-<h4><center>Game Navigation Menu</center></h4>
+<h4 style="text-align:center;">Game Navigation Menu</h4>
 
 ![Alt text](/README-images/game-menu.jpg?raw=true "Game Navigation Menu")
 
 * Game navigation menu implemented for players to be able to move freely to other areas to check their statistics and the pokemon that they have captured.
 
-<h4><center>Map Visualisation</center></h4>
+<h4 style="text-align:center;">Map Visualisation</h4>
 
 ![Alt text](/README-images/Map-Image.jpg?raw=true "Map Display")
 * At all times players will be able to view their location with the unique marker and their location will be tracked using the watch feature of leaflet. 
 * Random pokemon markers are spanwed everywhere within the vicinity of the player and they are clickable markers that will display the pokemon's information when clicked.
 
-<h4><center>Catching Mechanism</center></h4>
+<h4 style="text-align:center;">Catching Mechanism</h4>
 
 ![Alt text](/README-images/catch-example.jpg?raw=true "Catching Example")
 * Players will interact with two buttons constantly with the option to catch the pokemon if the pokemon is detected through the detector.
 * Functional dialog-box will display the message and update to players throughout the game to give players an interactive feel.
 
-<h4><center>Pokemon Captured Display</center></h4>
+<h4 style="text-align:center;">Pokemon Captured Display</h4>
 
 ![Alt text](/README-images/pokemon-box.jpg?raw=true "Player Pokemon")
 * Players are able to have a visual look of the pokemon that they have captured through the sprites.
 
-<h4><center>Player Statistics Display</center></h4>
+<h4 style="text-align:center;">Player Statistics Display</h4>
 
 ![Alt text](/README-images/player-statistics.jpg?raw=true "Player Statistics")
 * Players will their stats updated and they can view how many pokemon are left as well as how many they have caught. The stats will be updated accordingly upon each player's action.
@@ -184,7 +184,27 @@ Tablet Platform: IPad
 
 ## Credits
 ### Content and Media
+* All Pokemon related things are property of Nintendo and The Pokémon Company
+* Game  Logo (Customized Generator) : https://textcraft.net/style/Textcraft/pokemon 
+* Game Title Splash Page Wallpaper: https://wall.alphacoders.com/big.php?i=1046496
+* Game Title Background Music (Converted to Mp3 file): https://www.youtube.com/watch?v=V0aR8ckdiYI 
+* Professor Oak Image : https://bulbapedia.bulbagarden.net/wiki/Professor_Oak
+* Starter Pokemon Image: https://www.pikpng.com/pngvi/iToRTow_generation-kanto-starter-pokemon-gen-1-starters-png-clipart/
+* Instructions Background Music (Converted to Mp3 file): https://www.youtube.com/watch?v=YIwboj81ASw
+* Pokemon data: https://pokeapi.co/
+* Magnifying Icon for Detector Button: https://www.seekpng.com/ima/u2t4o0o0a9q8w7w7/
+* Pokeball Icon for Catch Button: https://www.flaticon.com/free-icon/pokeball_188918
+* My Pokemon Box Background : https://www.walpaperlist.com/2020/01/pokemon-wallpaper-retro.html
+* Pokemon Box Background: https://hipwallpaper.com/8-bit-backgrounds-blue/
+* Pokemon GB Font: https://www.onlinewebfonts.com/download/831e1f4da157d96bc996f8c9f5f1e578
 
 
 ### Acknowledgements
+* Dimensions of the Pokeball were obtained here for pokeball button in game title page: https://codepen.io/wifi/pen/IclLn
+
+* Customized CSS for pokemon-like textbox was inspired from:
+https://codepen.io/jaflo/pen/KHzjk
+
+* Game layout was inspired by classic games such as Pokemon Emerald, Ruby and Sapphire
+
 
