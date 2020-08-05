@@ -64,9 +64,12 @@ In the event that multiple pokemons are detected through the detector, when the 
 3. Countdown Timer: controls the total time allocated for the gameplay
 4. Player to pokemon distance : controls the distance allowed for a player to initiate an action against the pokemon. 
 
-<h4 style="text-align:center;">Game Title </h4>
+<div align="center"> 
+<h4>Game Title </h4>
 
 ![Alt text](/README-images/Homepage.jpg?raw=true "Game Title Page")
+</div>
+
 
 * Game Title Page serves as an appropriate presentation of a Pokemon game and allows
 players to be immersed in the Pokemon world.
