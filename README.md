@@ -76,9 +76,12 @@ players to be immersed in the Pokemon world.
 * Blinking animation on the press the pokeball to begin to make the title page more refined.
 * Background music implemented to contribute to overall game feel that will happen upon player mouse movement or touch action.
 
-<h4 style="text-align:center;">Game Instructions</h4>
+<div align="center">
+<h4>Game Instructions</h4>
 
 ![Alt text](/README-images/Instructions.jpg?raw=true "Instructions Page")
+</div>
+
 * Instructions Page have been implemented with animations to incorporate a realistic game feel despite having the game hosted on the browser page
 * Players will be greeted by the well-known professor Oak and the three original starter pokemon and the instructions will be displayed in a typewriter fashion to give players a feeling of interaction with professor Oak.
 * Players are able to skip the instructions if they wish to and they are able to start the game immediately
@@ -88,32 +91,46 @@ players to be immersed in the Pokemon world.
 #### Gameplay Application
 * Usage of a single page application for the  gameplay to allow users to have the ability to interact with a working navigation menu as they play the game.
 
-<h4 style="text-align:center;">Game Navigation Menu</h4>
+<div align="center">
+<h4>Game Navigation Menu</h4>
 
 ![Alt text](/README-images/game-menu.jpg?raw=true "Game Navigation Menu")
+</div>
 
 * Game navigation menu implemented for players to be able to move freely to other areas to check their statistics and the pokemon that they have captured.
 
-<h4 style="text-align:center;">Map Visualisation</h4>
+<div align="center">
+<h4>Map Visualisation</h4>
 
 ![Alt text](/README-images/Map-Image.jpg?raw=true "Map Display")
+</div>
+
 * At all times players will be able to view their location with the unique marker and their location will be tracked using the watch feature of leaflet. 
 * Random pokemon markers are spanwed everywhere within the vicinity of the player and they are clickable markers that will display the pokemon's information when clicked.
 
-<h4 style="text-align:center;">Catching Mechanism</h4>
+<div align="center">
+<h4>Catching Mechanism</h4>
 
 ![Alt text](/README-images/catch-example.jpg?raw=true "Catching Example")
+</div>
+
 * Players will interact with two buttons constantly with the option to catch the pokemon if the pokemon is detected through the detector.
 * Functional dialog-box will display the message and update to players throughout the game to give players an interactive feel.
 
-<h4 style="text-align:center;">Pokemon Captured Display</h4>
+<div align="center">
+<h4>Pokemon Captured Display</h4>
 
 ![Alt text](/README-images/pokemon-box.jpg?raw=true "Player Pokemon")
+</div>
+
 * Players are able to have a visual look of the pokemon that they have captured through the sprites.
 
-<h4 style="text-align:center;">Player Statistics Display</h4>
+<div align="center">
+<h4>Player Statistics Display</h4>
 
 ![Alt text](/README-images/player-statistics.jpg?raw=true "Player Statistics")
+</div>
+
 * Players will their stats updated and they can view how many pokemon are left as well as how many they have caught. The stats will be updated accordingly upon each player's action.
 
 
