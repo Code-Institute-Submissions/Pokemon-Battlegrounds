@@ -58,13 +58,43 @@ In the event that multiple pokemons are detected through the detector, when the 
 
 ## Features
 ### Current Features 
-1. Game Title Page
-![Alt text](/README-images/Homepage.jpg?raw=true "Optional Title")
+
+![Alt text](/README-images/Homepage.jpg?raw=true "Game Title Page")
+
+* Game Title Page serves as an appropriate presentation of a Pokemon game and allows
+players to be immersed in the Pokemon world.
+* Blinking animation on the press the pokeball to begin to make the title page more refined.
+
+![Alt text](/README-images/Instructions.jpg?raw=true "Instructions Page")
+* Instructions Page have been implemented with animations to incorporate a realistic game feel despite having the game hosted on the browser page
+* Players will be greeted by the well-known professor Oak and the three original starter pokemon and the instructions will be displayed in a typewriter fashion to give players a feeling of interaction with professor Oak.
+* Players are able to skip the instructions if they wish to and they are able to start the game immediately
+* Start button has been animated to be displayed after all the rules have been explained to contribute to the realistic game feel and players will be able to commence the game after that.
+
+#### Gameplay Application
+* Usage of a single page application for the  gameplay to allow users to have the ability to interact with a working navigation menu as they play the game.
+
+![Alt text](/README-images/game-menu.jpg?raw=true "Game Navigation Menu")
+
+* Game navigation menu implemented for players to be able to move freely to other areas to check their statistics and the pokemon that they have captured.
 
 
+![Alt text](/README-images/Map-Image.jpg?raw=true "Map Display")
+* At all times players will be able to view their location with the unique marker and their location will be tracked using the watch feature of leaflet. 
+* Random pokemon markers are spanwed everywhere within the vicinity of the player and they are clickable markers that will display the pokemon's information when clicked.
+
+![Alt text](/README-images/catch-example.jpg?raw=true "Catching Example")
+* Players will interact with two buttons constantly with the option to catch the pokemon if the pokemon is detected through the detector.
+* Functional dialog-box will display the message and update to players throughout the game to give players an interactive feel.
+
+![Alt text](/README-images/pokemon-box.jpg?raw=true "Player Pokemon")
+* Players are able to have a visual look of the pokemon that they have captured through the sprites.
+
+![Alt text](/README-images/player-statistics.jpg?raw=true "Player Statistics")
+* Players will their stats updated and they can view how many pokemon are left as well as how many they have caught. The stats will be updated accordingly upon each player's action.
 
 
-### Features Left to Implement
+### Possible Features to Consider For Improvement
 
 
 
