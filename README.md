@@ -206,6 +206,7 @@ Tablet Platform: IPad
 ## Credits
 ### Content and Media
 * All Pokemon related things are property of Nintendo and The Pokémon Company
+* Favicon Logo : https://www.favicon.cc/?action=icon&file_id=768294 
 * Game  Logo (Customized Generator) : https://textcraft.net/style/Textcraft/pokemon 
 * Game Title Splash Page Wallpaper: https://wall.alphacoders.com/big.php?i=1046496
 * Game Title Background Music (Converted to Mp3 file): https://www.youtube.com/watch?v=V0aR8ckdiYI 
