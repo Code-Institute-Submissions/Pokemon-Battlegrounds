@@ -52,10 +52,15 @@ In the event that multiple pokemons are detected through the detector, when the 
 6. Axios
 7. OnlineWebFonts(Pokemon GB Font)
 8. JQuery
+9. PokeAPI
+10. Leaflet
+11. Geolocation
 
 ## Features
 ### Current Features 
-1. 
+1. Game Title Page
+![Alt text](/README-images/Homepage.jpg?raw=true "Optional Title")
+
 
 
 
