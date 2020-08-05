@@ -59,6 +59,7 @@ In the event that multiple pokemons are detected through the detector, when the 
 ## Features
 ### Current Features 
 <h4>Customizable Parameters Implemented:</h4>
+
 1. Type of pokemon : controls the number of different types of pokemon even including recent generation pokemon. However, this is subjected to the availability of the data of PokeAPI
 2. Number of Pokemon Spawned : controls the number of pokemon to be spawned within the vicinity of the player
 3. Countdown Timer: controls the total time allocated for the gameplay
