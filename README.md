@@ -145,9 +145,9 @@ players to be immersed in the Pokemon world.
 Automated Testing was not used for this project. All testing was done manually with different personal devices along with the using the browser in-built inspector function.
 
 ### Personal Platforms
-Browsers considered: Google Chrome, Mozilla Firefox
-Mobile Platform: Pocophone F1
-Tablet Platform: IPad
+* Browsers considered: Google Chrome, Mozilla Firefox
+* Mobile Platform: Pocophone F1
+* Tablet Platform: IPad
 
 
 ### (1) Game Title Page
@@ -194,6 +194,7 @@ Tablet Platform: IPad
 ## Deployment
 * During the entire process of development, Google Chrome was used as the browser for viewing and checking of progress, while the coding process was done on Visual Studio Code
 
+
 * For the checking of mobile responsiveness, the game was hosted on github pages to be viewed on the Pocophone F1 to check on a real device, while for other types of mobiles, it was viewed through the inspector function of google chrome.
 
 * The whole game is deployed using Github pages and it utilizes the master branch of the repository. The game can be accessed [here](https://l0nelyhermit.github.io/Pokemon-Battlegrounds/).
@@ -201,6 +202,8 @@ Tablet Platform: IPad
 * You may also prefer to fork the repository or clone the repository for your own viewing.
 
 
+## Additional Notes
+A button used to spawn location at the user location is implemented intentionally for the checking of the catching mechanism and also for convenience of marking. It is intentional that the pokemon will not appear in the pokemon box and the statistics of pokemon caught to not be updated as this is just a dummy pokemon used for testing purpose.
 
 
 ## Credits

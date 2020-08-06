@@ -10,7 +10,7 @@
     margin:0;
     background-color: rgba(0,0,0,0.7);
 }
-
+/* Setting up the functionality for Single Page Application */
 .hidden {
     transform: translateX(-100%);
 }
@@ -43,7 +43,7 @@
     margin:0 !important;
     padding-top:0 !important;
 }
-
+/*  Game Logo as Title */
 #game-title{
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@
 
 
 
-
+/* Game Navigation Menu Buttons */
 #map-link,
 #myPokemon-link,
 #statistics-link{
@@ -106,14 +106,14 @@
     max-width: 100%;
     height: 200vh;
 }
-
+/* Pokemon Map Display */
 #pokemon-map{
     width:100%;
     max-width: 100%;
     max-height: 80vh;
     height:80vh;
 }
-
+/* Countdown Timer Display */
 #timer-area{
     max-width: 100%;
     width: 100%;
@@ -155,7 +155,7 @@
     align-items: center;
     flex-direction: column;
 }
-
+/* Dialog-box customization to compliment the pokemon text */
 #log-box{
         border-radius: 2px;
         padding: 8px;
@@ -177,6 +177,7 @@
     flex-direction: row;
     width:100%;
 }
+/* Catch and Detector buttons */
 #catch-pokemon,
 #detect-pokemon{
     width: 100% !important;
@@ -207,7 +208,7 @@
     flex-direction: column;
 }
 
-
+/* My Pokemon Box */
 .title-area{
     background-image: url(../images/gameApplication/pokemon-background-box.jpg);
     background-position: center;
@@ -232,7 +233,7 @@
     text-align: center;
     font-size: 20px;
 }
-
+/*  Pokemon Box to show the sprites of the captured pokemon */
 .pokemon-area{
     background-image:url(../images/gameApplication/pokemon-table-wallpaper.jpg);
     background-position: center;
@@ -252,7 +253,7 @@
                 inset 0 0 0 1px black;
 }
 
-
+/*  Player Statistics Area */
 #stats-display,
 .game-over-display{
     display:flex;
@@ -287,6 +288,7 @@
     height: 70%;
 }
 
+/* Game Over Overlay */
 .overlay{
     width:100%;
     height:100%;
@@ -301,7 +303,7 @@
 
 
 
-
+/* Media Queries to fit smaller device screens */
 
 @media only screen and (min-device-width:320px) and (max-device-width:415px){
     #navigation-list{
